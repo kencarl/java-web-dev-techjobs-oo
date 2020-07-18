@@ -46,7 +46,32 @@ public class Job {
 
     @Override
     public String toString() {
-        return name;
+        String employerInfo;
+        String locationInfo;
+        String positionInfo;
+        String competencyInfo;
+
+        if (getEmployer().toString() == "" ){
+            employerInfo = "Data not available";
+        } else employerInfo = getEmployer().toString();
+        if (getLocation().toString()== ""){
+            locationInfo = "Data not available";
+        } else locationInfo = getLocation().toString();
+        if (getPositionType().toString() == ""){
+            positionInfo = "Data not available";
+        } else positionInfo = getPositionType().toString();
+        if (getCoreCompetency().toString() == "") {
+            competencyInfo = "Data not available";
+        } else competencyInfo = getCoreCompetency().toString();
+
+
+        return "\n" +
+                "ID: " + getId() + "\n" +
+                "Name: " + getName()+ "\n" +
+                "Employer: " + employerInfo + "\n"+
+                "Location: " + locationInfo + "\n" +
+                "Position Type: " + positionInfo + "\n"+
+                "Core Competency: " + competencyInfo + "\n";
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
@@ -57,6 +82,9 @@ public class Job {
     }
 
     public String getName() {
+        if (name == ""){
+            return "Data not available";
+        } else
         return name;
     }
 
